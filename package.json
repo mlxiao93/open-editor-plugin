@@ -1,0 +1,32 @@
+{
+  "name": "open-editor-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "rm -rf dist && tsc --watch",
+    "#copy-inject": "node scripts/copy-inject.mjs",
+    "#dev": "concurrently 'tsc --watch' 'npm run copy-inject -- --watch'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "html-webpack-plugin": "^5.x",
+    "webpack": "^5.x",
+    "webpack-dev-server": "^4.x"
+  },
+  "dependencies": {
+    "@types/jscodeshift": "^0.11.6",
+    "@types/node": "^20.3.0",
+    "chokidar": "^3.5.3",
+    "concurrently": "^8.2.0",
+    "jscodeshift": "^0.15.0",
+    "launch-editor": "^2.6.0",
+    "minimist": "^1.2.8"
+  }
+}
